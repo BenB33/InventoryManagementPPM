@@ -16,7 +16,7 @@ namespace InventoryManagmentPPM.Models
           throw new ArgumentNullException("Null InventoryManagmentPPMContext");
         }
 
-        // Look for any movies.
+        // Look for any items.
         if (context.InventoryItem.Any())
         {
           return;   // DB has been seeded
