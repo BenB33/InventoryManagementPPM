@@ -1,14 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using InventoryManagmentPPM.Data;
+using InventoryManagmentPPM.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<InventoryManagmentPPMContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("InventoryManagmentPPMContext") ?? throw new InvalidOperationException("Connection string 'InventoryManagmentPPMContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("InventoryManagmentPPMContext") ??
+    throw new InvalidOperationException("Connection string 'InventoryManagmentPPMContext' not found.")));
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+  var services = scope.ServiceProvider;
+  SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
