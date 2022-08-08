@@ -30,10 +30,9 @@ namespace InventoryManagmentPPM.Pages.Inventory
         public async Task OnGetAsync()
         {
             var items = from i in _context.InventoryItem select i;
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                items = items.Where(s => (s.Title.Contains(SearchString) || s.SiteCode.Contains(SearchString) 
-                  || s.Comment.Contains(SearchString) || s.PpmCode.Contains(SearchString) || s.Client.Contains(SearchString)));
+            if (!string.IsNullOrEmpty(SearchString)) {
+              items = items.Where(s => (s.Title.Contains(SearchString) || s.SiteCode.Contains(SearchString) 
+                || s.Comment.Contains(SearchString) || s.PpmCode.Contains(SearchString) || s.Client.Contains(SearchString)));
             }
             InventoryItem = await items.ToListAsync();
         }

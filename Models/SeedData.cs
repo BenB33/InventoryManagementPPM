@@ -11,20 +11,17 @@ namespace InventoryManagmentPPM.Models
           serviceProvider.GetRequiredService<
               DbContextOptions<InventoryManagmentPPMContext>>()))
       {
-        if (context == null || context.InventoryItem == null)
-        {
+        if (context == null || context.InventoryItem == null) {
           throw new ArgumentNullException("Null InventoryManagmentPPMContext");
         }
 
         // Look for any items.
-        if (context.InventoryItem.Any())
-        {
+        if (context.InventoryItem.Any()) {
           return;   // DB has been seeded
         }
 
         context.InventoryItem.AddRange(
-            new InventoryItem
-            {
+            new InventoryItem {
               Title = "Office Table",
               Quantity = 10,
               PpmCode = "F-02",
@@ -33,8 +30,7 @@ namespace InventoryManagmentPPM.Models
               Client = "Nomad",
             },
 
-            new InventoryItem
-            {
+            new InventoryItem {
               Title = "Office Chair",
               Quantity = 5,
               PpmCode = "F-09",
@@ -43,8 +39,7 @@ namespace InventoryManagmentPPM.Models
               Client = "Nomad",
             },
 
-            new InventoryItem
-            {
+            new InventoryItem {
               Title = "Duvet Set",
               Quantity = 2,
               PpmCode = "H-19",
@@ -53,8 +48,7 @@ namespace InventoryManagmentPPM.Models
               Client = "Nomad",
             },
 
-            new InventoryItem
-            {
+            new InventoryItem {
               Title = "Painting",
               Quantity = 3,
               PpmCode = "A-04",
@@ -63,8 +57,7 @@ namespace InventoryManagmentPPM.Models
               Client = "Arts Club",
             },
 
-            new InventoryItem
-            {
+            new InventoryItem {
               Title = "Desk Lamp",
               Quantity = 18,
               PpmCode = "L-10",
