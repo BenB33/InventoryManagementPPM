@@ -12,7 +12,15 @@
 </p>
 <form>
   <p>
-    Title: <input type="text" asp-for="SearchString" />
+    <h4>Filter String:</h4> 
+    <input type="text" asp-for="SearchString" />
+    <h4>Filter by:</h4>
+    Name: <input type="checkbox" name="CheckboxFilterName" />
+    PPM Code: <input type="checkbox" name="CheckboxFilterPpmCode" />
+    Client: <input type="checkbox" name="CheckboxFilterClient" />
+    Site Code: <input type="checkbox" name="CheckboxFilterSiteCode" />
+    Quantity: <input type="checkbox" name="CheckboxFilterQuantity" />
+    Comment: <input type="checkbox" name="CheckboxFilterComment" />
     <input type="submit" value="Filter" />
   </p>
 </form>
