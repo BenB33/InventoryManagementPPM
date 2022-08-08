@@ -19,6 +19,10 @@ body {
     background: rgba(30, 30, 30, 1)
 }
 
-table th {
+table tr{
     color: #dbae09;
+}
+
+table td{
+    color: white;
 }
