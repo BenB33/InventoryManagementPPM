@@ -43,6 +43,11 @@ namespace InventoryManagmentPPM.Pages.Inventory
 
           var items = from i in _context.InventoryItem select i;
             if (!string.IsNullOrEmpty(SearchString)) {
+              if (!CheckboxFilterName && !CheckboxFilterPpmCode && !CheckboxFilterClient 
+                  && !CheckboxFilterSiteCode && !CheckboxFilterQuantity && !CheckboxFilterComment) {
+                CheckboxFilterName = CheckboxFilterPpmCode = CheckboxFilterClient = CheckboxFilterSiteCode = CheckboxFilterQuantity = CheckboxFilterComment = true;
+              }
+
               items = items.Where(s => (
                 (CheckboxFilterName && s.Title.Contains(SearchString)) ||
                 (CheckboxFilterSiteCode && s.SiteCode.Contains(SearchString)) ||
