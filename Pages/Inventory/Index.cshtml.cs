@@ -35,6 +35,8 @@ namespace InventoryManagmentPPM.Pages.Inventory
         [BindProperty(SupportsGet = true)]
         public bool CheckboxFilterSiteCode { get; set; }
         [BindProperty(SupportsGet = true)]
+        public bool CheckboxFilterBay { get; set; }
+        [BindProperty(SupportsGet = true)]
         public bool CheckboxFilterQuantity { get; set; }
         [BindProperty(SupportsGet = true)]
         public bool CheckboxFilterComment { get; set; }
@@ -45,12 +47,14 @@ namespace InventoryManagmentPPM.Pages.Inventory
             if (!string.IsNullOrEmpty(SearchString)) {
               if (!CheckboxFilterName && !CheckboxFilterPpmCode && !CheckboxFilterClient 
                   && !CheckboxFilterSiteCode && !CheckboxFilterQuantity && !CheckboxFilterComment) {
-                CheckboxFilterName = CheckboxFilterPpmCode = CheckboxFilterClient = CheckboxFilterSiteCode = CheckboxFilterQuantity = CheckboxFilterComment = true;
+                CheckboxFilterName = CheckboxFilterPpmCode = CheckboxFilterClient = CheckboxFilterSiteCode
+                = CheckboxFilterQuantity = CheckboxFilterComment = CheckboxFilterBay = true;
               }
 
               items = items.Where(s => (
                 (CheckboxFilterName && s.Title.Contains(SearchString)) ||
                 (CheckboxFilterSiteCode && s.SiteCode.Contains(SearchString)) ||
+                (CheckboxFilterBay && s.SiteCode.Contains(SearchString)) ||
                 (CheckboxFilterComment && s.Comment.Contains(SearchString)) ||
                 (CheckboxFilterPpmCode && s.PpmCode.Contains(SearchString)) ||
                 (CheckboxFilterClient && s.Client.Contains(SearchString))));
