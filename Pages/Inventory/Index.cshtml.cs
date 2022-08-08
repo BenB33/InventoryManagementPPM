@@ -15,24 +15,40 @@ namespace InventoryManagmentPPM.Pages.Inventory
     {
         private readonly InventoryManagmentPPM.Data.InventoryManagmentPPMContext _context;
 
-        public IndexModel(InventoryManagmentPPM.Data.InventoryManagmentPPMContext context)
-        {
+        public IndexModel(InventoryManagmentPPM.Data.InventoryManagmentPPMContext context) {
             _context = context;
         }
 
         public IList<InventoryItem> InventoryItem { get;set; } = default!;
         [BindProperty(SupportsGet = true)]
         public string ? SearchString { get; set; }
-        public SelectList? Clients { get; set;  }
+        public SelectList? Clients { get; set; }
         [BindProperty(SupportsGet = true)]
         public string? ItemClient { get; set; }
 
-        public async Task OnGetAsync()
-        {
-            var items = from i in _context.InventoryItem select i;
+        [BindProperty(SupportsGet = true)]
+        public bool CheckboxFilterName { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public bool CheckboxFilterPpmCode { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public bool CheckboxFilterClient { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public bool CheckboxFilterSiteCode { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public bool CheckboxFilterQuantity { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public bool CheckboxFilterComment { get; set; }
+
+        public async Task OnGetAsync() {
+
+          var items = from i in _context.InventoryItem select i;
             if (!string.IsNullOrEmpty(SearchString)) {
-              items = items.Where(s => (s.Title.Contains(SearchString) || s.SiteCode.Contains(SearchString) 
-                || s.Comment.Contains(SearchString) || s.PpmCode.Contains(SearchString) || s.Client.Contains(SearchString)));
+              items = items.Where(s => (
+                (CheckboxFilterName && s.Title.Contains(SearchString)) ||
+                (CheckboxFilterSiteCode && s.SiteCode.Contains(SearchString)) ||
+                (CheckboxFilterComment && s.Comment.Contains(SearchString)) ||
+                (CheckboxFilterPpmCode && s.PpmCode.Contains(SearchString)) ||
+                (CheckboxFilterClient && s.Client.Contains(SearchString))));
             }
             InventoryItem = await items.ToListAsync();
         }
