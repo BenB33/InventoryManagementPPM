@@ -21,6 +21,9 @@ namespace InventoryManagmentPPM.Models
     [Required]
     public string SiteCode { get; set; } = string.Empty;
 
+    [StringLength(6)]
+    public string Bay { get; set; } = string.Empty;
+
     [Required]
     public int Quantity { get; set; }
 
