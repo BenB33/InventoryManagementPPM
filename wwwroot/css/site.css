@@ -14,5 +14,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    color: white;
+    background: rgba(30, 30, 30, 1)
+}
+
+table th {
+    color: #dbae09;
 }
