@@ -9,43 +9,85 @@
     <link rel="stylesheet" href="~/InventoryManagmentPPM.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+    <div id="page-container">
+        <div id="content-wrap">
+            <header>
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+                    <div class="container">
+                        <a class="navbar-brand" asp-area="" asp-page="/Index">
+                            <img src="https://ppm-support-b13238.ingress-comporellon.ewp.live/wp-content/uploads/2022/05/Logo.png" height="40"/>    
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/Inventory/Index">Inventory</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="https://ppm-support-b13238.ingress-comporellon.ewp.live/wp-content/uploads/2022/05/Logo.png" height="40"/>    
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Inventory/Index">Inventory</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="">Login</a>
-                        </li>
-                    </ul>
-                </div>
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - InventoryManagmentPPM
         </div>
-    </footer>
+            <footer class="bg-dark text-white">
+                <!-- Grid container -->
+                <div class="container p-4">
+                  <!--Grid row-->
+                  <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                      <h5 class="footer-header"><b>Address</b></h5>
+                      <p>
+                          <br />
+                        Unit K2-K5 Usk Vale Park Estate,<br />Cwmoody,<br />Pontypool,<br />NP40JN
+                      </p>
+                    </div>
+                    <!--Grid column-->
 
+                    <!--Grid column-->
+                    <div class="col-lg-3">
+                      <h5 class="footer-header"><b>Contact</b></h5>
+                      <br />
+                      <ul class="list-unstyled">
+                        <li>
+                          Phone: (+44) 07538999560
+                        </li>
+                        <li>
+                          Email: jita@ppm-support.co.uk
+                        </li>
+                        <li>
+                          If you have a question,<br />please contact us!
+                        </li>
+                      </ul>
+                    </div>
+                    <!--Grid column-->
+                  </div>
+                  <!--Grid row-->
+
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                  © 2022 PPM Support Limited | All Rights Reserved
+                </div>
+                <!-- Copyright -->
+            </footer>
+        
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
