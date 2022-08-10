@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InventoryManagmentPPM.Migrations
 {
     [DbContext(typeof(InventoryManagmentPPMContext))]
-    [Migration("20220810001802_ImageName")]
+    [Migration("20220810121454_ImageName")]
     partial class ImageName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,10 @@ namespace InventoryManagmentPPM.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
