@@ -53,6 +53,12 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.InventoryItem[0].ImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InventoryItem[0].ImageName)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.InventoryItem[0].Title)
             </th>
             <th>
@@ -79,6 +85,12 @@
     <tbody>
 @foreach (var item in Model.InventoryItem) {
         <tr>
+            <td>
+              <img src="@("~/images/"+item.ImageName)" asp-append-version="true" width="200px" height="200px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>

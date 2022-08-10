@@ -22,53 +22,58 @@ namespace InventoryManagmentPPM.Models
 
         context.InventoryItem.AddRange(
             new InventoryItem {
-              Title = "Office Table",
+              Title = "Shredder",
               Quantity = 10,
               PpmCode = "F-02",
               SiteCode = "SE-009-B",
               Bay = "B",
               Comment = "One damaged - small scratch on left side",
               Client = "Nomad",
+              ImageName = "shredder.png",
             },
 
             new InventoryItem {
-              Title = "Office Chair",
+              Title = "Tabletop Phone",
               Quantity = 5,
               PpmCode = "F-09",
               SiteCode = "SE-009-B",
               Bay = "B",
-              Comment = "Chair with blue seat covers",
+              Comment = "",
               Client = "Nomad",
+              ImageName = "phone.png",
             },
 
             new InventoryItem {
-              Title = "Duvet Set",
+              Title = "Printer Paper",
               Quantity = 2,
               PpmCode = "H-19",
               SiteCode = "SE-007-A",
               Bay = "A",
-              Comment = "Has a picture of buzz lightyear",
+              Comment = "HP 400 sheets",
               Client = "Nomad",
+              ImageName = "paper.png",
             },
 
             new InventoryItem {
-              Title = "Painting",
+              Title = "Kitchen Scale",
               Quantity = 3,
               PpmCode = "A-04",
               SiteCode = "SE-009-A",
               Bay = "C",
-              Comment = "Art for hanging in hotel rooms",
+              Comment = "Scales for weighing ingredients",
               Client = "Arts Club",
+              ImageName = "scale.png",
             },
 
             new InventoryItem {
-              Title = "Desk Lamp",
+              Title = "Food Blender",
               Quantity = 18,
               PpmCode = "L-10",
               SiteCode = "SE-009-B",
               Bay = "A",
-              Comment = "Bendy desk lamp",
+              Comment = "Vitamix w/ measuring jug",
               Client = "Arts Club",
+              ImageName = "blender.png",
             }
         );
         context.SaveChanges();
