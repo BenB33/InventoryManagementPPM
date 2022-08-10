@@ -31,10 +31,12 @@ namespace InventoryManagmentPPM.Models
 
     public string Comment { get; set; } = string.Empty;
 
+    public string ImageName { get; set; }
+
     [NotMapped]
     [DisplayName("Upload File")]
     public IFormFile ImageFile { get; set; }
 
-    public string ImageName = string.Empty;
+    
   }
 }
