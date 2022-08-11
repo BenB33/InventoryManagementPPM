@@ -86,7 +86,7 @@
 @foreach (var item in Model.InventoryItem) {
         <tr>
             <td>
-              <img src="@("~/images/"+item.ImageName)" asp-append-version="true" width="200px" height="200px" />
+              <img src="@("~/images/"+item.ImageName)" asp-append-version="true" width="200px" height="200px" style="object-fit: cover;" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ImageName)
