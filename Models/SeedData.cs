@@ -19,7 +19,7 @@ namespace InventoryManagmentPPM.Models
         if (context.InventoryItem.Any()) {
           return;   // DB has been seeded
         }
-
+        
         context.InventoryItem.AddRange(
             new InventoryItem {
               Title = "Shredder",
