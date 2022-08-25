@@ -49,3 +49,8 @@ footer{
 .footer-header {
     color: #dbae09;
 }
+
+#title-img {
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+}
