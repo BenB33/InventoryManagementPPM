@@ -19,9 +19,10 @@ namespace InventoryManagmentPPM.Models
         if (context.InventoryItem.Any()) {
           return;   // DB has been seeded
         }
-        
+
         context.InventoryItem.AddRange(
-            new InventoryItem {
+            new InventoryItem
+            {
               Title = "Shredder",
               Quantity = 10,
               PpmCode = "F-02",
@@ -30,9 +31,11 @@ namespace InventoryManagmentPPM.Models
               Comment = "One damaged - small scratch on left side",
               Client = "Nomad",
               ImageName = "shredder.png",
+              IsApproved = false,
             },
 
-            new InventoryItem {
+            new InventoryItem
+            {
               Title = "Tabletop Phone",
               Quantity = 5,
               PpmCode = "F-09",
@@ -41,9 +44,11 @@ namespace InventoryManagmentPPM.Models
               Comment = "",
               Client = "Nomad",
               ImageName = "phone.png",
+              IsApproved = false,
             },
 
-            new InventoryItem {
+            new InventoryItem
+            {
               Title = "Printer Paper",
               Quantity = 2,
               PpmCode = "H-19",
@@ -52,9 +57,11 @@ namespace InventoryManagmentPPM.Models
               Comment = "HP 400 sheets",
               Client = "Nomad",
               ImageName = "paper.png",
+              IsApproved = false,
             },
 
-            new InventoryItem {
+            new InventoryItem
+            {
               Title = "Kitchen Scale",
               Quantity = 3,
               PpmCode = "A-04",
@@ -63,9 +70,11 @@ namespace InventoryManagmentPPM.Models
               Comment = "Scales for weighing ingredients",
               Client = "Arts Club",
               ImageName = "scale.png",
+              IsApproved = true,
             },
 
-            new InventoryItem {
+            new InventoryItem
+            {
               Title = "Food Blender",
               Quantity = 18,
               PpmCode = "L-10",
@@ -74,6 +83,7 @@ namespace InventoryManagmentPPM.Models
               Comment = "Vitamix w/ measuring jug",
               Client = "Arts Club",
               ImageName = "blender.png",
+              IsApproved = true,
             }
         );
         context.SaveChanges();

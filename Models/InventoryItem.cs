@@ -36,5 +36,7 @@ namespace InventoryManagmentPPM.Models
     [NotMapped]
     [DisplayName("Upload File")]
     public IFormFile ImageFile { get; set; }
+
+    public bool IsApproved { get; set; } = false;
   }
 }
