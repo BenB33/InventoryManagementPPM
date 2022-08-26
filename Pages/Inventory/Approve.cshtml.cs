@@ -43,11 +43,7 @@ namespace InventoryManagmentPPM.Pages.Inventory
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
+            InventoryItem.IsApproved = true;
             _context.Attach(InventoryItem).State = EntityState.Modified;
 
             try
@@ -66,7 +62,7 @@ namespace InventoryManagmentPPM.Pages.Inventory
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/BufferList");
         }
 
         private bool InventoryItemExists(int id)

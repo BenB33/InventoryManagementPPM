@@ -19,7 +19,7 @@ namespace InventoryManagmentPPM.Pages.Inventory
             _context = context;
         }
 
-        public IList<InventoryItem> InventoryItem { get;set; } = default!;
+        public IList<InventoryItem> InventoryItem { get; set; } = default!;
         [BindProperty(SupportsGet = true)]
         public string ? SearchString { get; set; }
         public SelectList? Clients { get; set; }
