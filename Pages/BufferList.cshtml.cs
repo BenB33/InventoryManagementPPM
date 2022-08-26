@@ -25,7 +25,7 @@ namespace InventoryManagmentPPM.Pages
         public async Task OnGetAsync() {
           var items = from i in _context.InventoryItem select i;
 
-          items = items.Where(s => (s.IsApproved));
+          items = items.Where(s => (!s.IsApproved));
 
           InventoryItem = await items.ToListAsync();
         }

@@ -60,7 +60,10 @@ namespace InventoryManagmentPPM.Pages.Inventory
                 (CheckboxFilterPpmCode && s.PpmCode.Contains(SearchString)) ||
                 (CheckboxFilterClient && s.Client.Contains(SearchString))));
             }
+
+            items = items.Where(s => (s.IsApproved));
             InventoryItem = await items.ToListAsync();
+
         }
     }
 }
