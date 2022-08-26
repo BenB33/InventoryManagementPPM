@@ -63,7 +63,7 @@
                 @Html.DisplayFor(modelItem => item.Comment)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID"><Button type="button" class="btn btn-outline-success">Approve</Button></a>
+                <a asp-page="./Approve" asp-route-id="@item.ID"><Button type="button" class="btn btn-outline-success">Approve</Button></a>
                 <a asp-page="./Delete" asp-route-id="@item.ID"><Button type="button" class="btn btn-outline-danger">Delete</Button></a>
             </td>
         </tr>
