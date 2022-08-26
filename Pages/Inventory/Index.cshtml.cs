@@ -43,7 +43,8 @@ namespace InventoryManagmentPPM.Pages.Inventory
 
         public async Task OnGetAsync() {
 
-          var items = from i in _context.InventoryItem select i;
+            var items = from i in _context.InventoryItem select i;
+
             if (!string.IsNullOrEmpty(SearchString)) {
               if (!CheckboxFilterName && !CheckboxFilterPpmCode && !CheckboxFilterClient 
                   && !CheckboxFilterSiteCode && !CheckboxFilterQuantity && !CheckboxFilterComment) {

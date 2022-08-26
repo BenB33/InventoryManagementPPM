@@ -21,12 +21,13 @@ namespace InventoryManagmentPPM.Pages
 
         public IList<InventoryItem> InventoryItem { get;set; } = default!;
 
-        public async Task OnGetAsync()
-        {
-            if (_context.InventoryItem != null)
-            {
-                InventoryItem = await _context.InventoryItem.ToListAsync();
-            }
+
+        public async Task OnGetAsync() {
+          var items = from i in _context.InventoryItem select i;
+
+          items = items.Where(s => (s.IsApproved));
+
+          InventoryItem = await items.ToListAsync();
         }
     }
 }
