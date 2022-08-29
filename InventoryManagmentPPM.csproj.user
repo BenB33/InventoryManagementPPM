@@ -12,5 +12,6 @@
     <WebStackScaffolding_DbContextTypeFullName>InventoryManagmentPPM.Data.InventoryManagmentPPMContext</WebStackScaffolding_DbContextTypeFullName>
     <RazorPage_SelectedScaffolderID>ModelBasedRazorPageScaffolder</RazorPage_SelectedScaffolderID>
     <RazorPage_SelectedScaffolderCategoryPath>root/Common/RazorPage</RazorPage_SelectedScaffolderCategoryPath>
+    <NameOfLastUsedPublishProfile>F:\User Files\Documents\GitHub Repos\InventoryManagementPPM\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
